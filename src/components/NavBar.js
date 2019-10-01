@@ -1,9 +1,9 @@
 import React from 'react'
 import Profile from './Profile'
-import Login from './Login'
-import SignUp from './SignUp'
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+// import { Button, Menu } from 'semantic-ui-react'
+
+import { Link} from "react-router-dom"
 
 class NavBar extends React.Component {
     renderProfile = () => {
@@ -12,28 +12,33 @@ class NavBar extends React.Component {
     }
 
 
-
-
     render () {
         return (
-        <Router>
-        <div class="ui menu">
-            <div class="item">
-                <Link to="/SignUp"class="ui primary button"> Sigup </Link>
+        <div>    
+        <div className="ui menu">
+            <div className="item">
+                <Link to="/SignUp"className="ui primary button"> Signup </Link>
                 {/* <Link to="/SignUp">  */}
             </div>
-            <div class="item">
-                <Link to="/Login"class="ui primary button">Login</Link>
+            <div className="item">
+                <Link to="/Login"className="ui primary button">Login</Link>
             </div>
-            <div class="item">
-                <Link to="/Profile"class="ui primary button">Profile</Link> 
-            </div>
+            {/* <div className="item">
+                <Link to="/Profile"className="ui primary button">Profile</Link> 
+            </div> */}
+            
         </div>
 
-            <Route path="/SignUp" exact component={SignUp} />
-            <Route path="/Login" component={Login} />
-            <Route path="/Profile" component={Profile} />
-        </Router>
+            <div className="item">
+                <Link to="/Search"className="">Search</Link> 
+            </div>
+            <div className="item">
+                <Link to="/Shelf"className="">Shelf</Link> 
+            </div>
+        
+        </div>
+          
+    
         )
     }
 }

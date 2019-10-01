@@ -1,0 +1,51 @@
+#book-details-pic {
+    float:left;
+    /* padding: 25px; */
+    display:flex;
+    height: 200px;
+    width: 150px;
+    
+   
+}
+
+div.ui.fluid.container {
+    margin: 0;
+    width: 800px;
+    padding: 35px;
+    text-align: left;
+    border: 1px solid teal;
+}
+
+/* #card-content {
+    max-width: 95%
+} */
+
+
+
+.published-text {
+    margin-left: 30px;
+    color: gray;
+}
+
+.description-text {
+    margin-top: 10px;
+}
+
+.author-text {
+    color: gray;
+}
+
+/* #book-detail-container {
+    padding: 150px;
+    text-align: left;
+    border: 1px solid teal;
+} */
+
+div.ui.fluid.container p {
+    display: flex;
+}
+
+div.ui.fluid.container form {
+    /* margin-top: 20px; */
+    display: flex;
+}

@@ -1,0 +1,47 @@
+.hero {
+    /* padding-top: 100px; */
+    width: 100vw;
+    height: 60vh;
+    background-image: url('./grid-header-image-2.svg');
+    background-size: cover;
+    /* background-position: center; */
+    /* background-size: 100%; */
+    /* background-position: center; */
+    position: relative;
+    /* background-repeat: repeat-x; */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: -65px;
+    /* margin: 0 auto; */
+}
+
+
+.typewriter-pic {
+    position: absolute;
+}
+
+
+.book {
+    font-family: "American Typewriter",
+    serif;
+    font-weight: lighter;
+    display: flex;
+    position: absolute;
+    margin-top: -510px;
+    margin-left: 200px;
+    letter-spacing: 10px;
+}
+
+.worm {
+    font-family: "American Typewriter",
+    serif;
+    font-weight: lighter;
+    display: flex;
+    position: absolute;
+    margin-top: -470px;
+    margin-left: 200px;
+    letter-spacing: 10px;
+    
+}
