@@ -40,7 +40,10 @@ import '../assets/BookContainer.css'
                     {this.renderBooks()}
                     
                     {Object.keys(this.state.bookDetailObj).length < 1 ?  null : 
-                    <BookDetail {...this.state.bookDetailObj} setUserStatus={this.props.setUserStatus} userObj={this.props.userObj} /> }
+                        <React.Fragment>
+                            <BookDetail {...this.state.bookDetailObj} setUserStatus={this.props.setUserStatus} userObj={this.props.userObj} /> 
+                        </React.Fragment>
+                    }
                     
                 </div>
        

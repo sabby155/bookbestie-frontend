@@ -7,12 +7,14 @@ class NYTBestsellersContainer extends React.Component {
 
     state = {
         bookDetailObj: {},
+        bookCover: ""
     }
 
     // book and bookDetail are siblings - difficulty passing props btn them so muct go back up through container 
-    renderBookDetail = (props) => {
+    renderBookDetail = (props, cover) => {
         this.setState({
-            bookDetailObj: props
+            bookDetailObj: props,
+            bookCover: cover
         })
     }
 
@@ -38,7 +40,7 @@ class NYTBestsellersContainer extends React.Component {
                     {this.renderBooks()}
                     
                     {Object.keys(this.state.bookDetailObj).length < 1 ?  null : 
-                    <BookDetail {...this.state.bookDetailObj} setUserStatus={this.props.setUserStatus} userObj={this.props.userObj} /> }
+                    <BookDetail {...this.state}  setUserStatus={this.props.setUserStatus} userObj={this.props.userObj} /> }
                     
                 </div>
 

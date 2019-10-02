@@ -1,6 +1,6 @@
 import React from 'react'
 import {  Image, Button, Icon  } from 'semantic-ui-react'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import '../assets/Book.css'
 
 // import BookDetail from './BookDetail'
@@ -11,7 +11,7 @@ import '../assets/Book.css'
         bookCover: "https://i.imgur.com/fNK4GjV.png"
     }
 
-    componentDidMount() {
+    componentDidMount(props) {
         if(this.props.isbn !== null) {
             let isbn = this.props.isbn
             // console.log('yes', isbn)
@@ -24,8 +24,8 @@ import '../assets/Book.css'
                     let imageThumbnail = data["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"]
                     this.setState({
                         bookCover: imageThumbnail,
-                    })
-                
+                    })  
+                this.props.saveBookCover(this.state.bookCover, data.id)
             })
             .catch(error => {
                 console.log(error.message)
@@ -50,7 +50,10 @@ import '../assets/Book.css'
             </Card> */}
 
 
-            <div className="book-card" onClick={(event) => this.props.handleClick(this.props)}>
+            <div className="book-card" onClick={(event) => {
+                // sending props and book cover back up to container to render the book detail card with cover. 
+                this.props.handleClick(this.props, this.state.bookCover)
+                }}>
                 {this.props.isbn === null ? <Image className="book-cover" src={this.props.image_url} size='small' centered/> : <Image className="book-cover" src={this.state.bookCover} size='small' centered/>}
                 <Button circular
                     // type="submit"
@@ -75,22 +78,22 @@ import '../assets/Book.css'
        ) 
     }
 }
-// function mapStateToProps(state) {
-//     // console.log('look here to see if status worked!!!!', state.statuses)
-//     return {
-//         bookCover: state.bookCover,
-//     }
-// }
+function mapStateToProps(state) {
+    console.log('look here to see if status for bookcover worked!!!!', state)
+    return {
+        savedBookCover: state.savedBookCover,
+    }
+}
 
-// function mapDispatchToProps(dispatch) {
-//     return {
-//         addToStatuses: (memory) => {
-//             return dispatch({
-//                 type: "ADD_TO_STATUSES",
-//                 payload: memory
-//             })
-//         }
-//     }
-// }
+function mapDispatchToProps(dispatch) {
+    return {
+        saveBookCover: (memory) => {
+            return dispatch({
+                type: "SAVE_BOOKCOVER",
+                payload: memory
+            })
+        }
+    }
+}
 
-export default Book
+export default connect(mapStateToProps, mapDispatchToProps)(Book)

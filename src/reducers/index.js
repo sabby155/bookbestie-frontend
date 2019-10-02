@@ -4,6 +4,8 @@ const defaultState = {
     statuses: [],
     bestSellerCards: [],
     googleBooksCards: [],
+    savedBookCovers: []
+
     // bookCover: "https://i.imgur.com/fNK4GjV.png",
 
     // userObj: {
@@ -15,8 +17,9 @@ const defaultState = {
 const reducer = (state=defaultState, action) => {
     switch(action.type){
 
-        // case "SAVE_BOOKCOVER": 
-        //     return {...state, bookCover: action.payload}
+        case "SAVE_BOOKCOVER": 
+            let bookCovers = [...state.savedBookCovers, action.payload]
+            return {...state, savedBookCovers: bookCovers}
         
         case "SAVE_BESTSELLERS_TO_CARDS": 
             return {...state, cards: action.payload}
