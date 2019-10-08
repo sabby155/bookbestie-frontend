@@ -59,10 +59,11 @@ import '../assets/Book.css'
                 {this.props.isbn === null ? null : 
                 <div>
                 
-                    <Button circular
+                    <Button circular 
                         // type="submit"
                         size="medium"
-                        icon color='white'
+                        color="white"
+
                         id="book-rankings"
                         >
                         {/* {this.props.savedBookCover.map((book) => 
@@ -70,13 +71,13 @@ import '../assets/Book.css'
                                 counter: this.state.counter + 1,
                             })
                         )} */}
-                        {this.props.count}
+                        <span id="ranks">{this.props.count}</span>
                     </Button>
                 </div>}
                 
                 <Button circular
                     // type="submit"
-                    size="small"
+                    size="medium"
                     icon color='teal'
                     id="add-to-shelf"
                     >

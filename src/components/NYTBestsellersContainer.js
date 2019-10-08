@@ -38,8 +38,8 @@ class NYTBestsellersContainer extends React.Component {
        
         return (
             <div className="nyt-bestsellers-container">
-                <h2>Bestseller's List</h2>
-                <h3>Explore this month’s NYTimes Best seller’s list for Combined Print and E-Book Fiction.</h3>
+                <h2>Best Seller List</h2>
+                <h3>Explore this month’s New York Times Best Seller list rankings for Combined Print and E-Book Fiction.</h3>
 
                 <div className="ui grid container">
                     {this.renderBooks()}

@@ -1,5 +1,8 @@
 import React from 'react'
 import Profile from './Profile'
+// import { Menu, Segment } from 'semantic-ui-react'
+
+
 
 // import { Button, Menu } from 'semantic-ui-react'
 
@@ -15,25 +18,34 @@ class NavBar extends React.Component {
     render () {
         return (
         <div>    
-        <div className="ui menu">
-            <div className="item">
-                <Link to="/SignUp"className="ui primary button"> Signup </Link>
-                {/* <Link to="/SignUp">  */}
+        <div className="ui menu secondary fluid">
+            <div className="item right">
+                <Link 
+                    to="/SignUp" 
+                    className=""
+                    > Signup </Link>
             </div>
             <div className="item">
-                <Link to="/Login"className="ui primary button">Login</Link>
+                <Link 
+                    to="/Login" 
+                    className=""
+                    >Login</Link>
             </div>
-            {/* <div className="item">
-                <Link to="/Profile"className="ui primary button">Profile</Link> 
-            </div> */}
-            
-        </div>
+           
 
+        </div>
+        
             <div className="item">
-                <Link to="/Search"className="">Search</Link> 
+                <Link 
+                    to="/Search"
+                    className=""
+                    >Search</Link> 
             </div>
             <div className="item">
-                <Link to="/Shelf"className="">Shelf</Link> 
+                <Link 
+                    to="/Shelf"
+                    className="
+                    ">Shelf</Link> 
             </div>
         
         </div>
