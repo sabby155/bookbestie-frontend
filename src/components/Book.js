@@ -8,7 +8,7 @@ import '../assets/Book.css'
  class Book extends React.Component {
 
     state = {
-        bookCover: "https://i.imgur.com/fNK4GjV.png"
+        bookCover: "https://i.imgur.com/fNK4GjV.png",
     }
 
     componentDidMount(props) {
@@ -35,7 +35,6 @@ import '../assets/Book.css'
 
     render() {
         // console.log('wcewfewf',this.state)
-        
        return (
         <div>
             {/* card component */}
@@ -54,7 +53,27 @@ import '../assets/Book.css'
                 // sending props and book cover back up to container to render the book detail card with cover. 
                 this.props.handleClick(this.props, this.state.bookCover)
                 }}>
-                {this.props.isbn === null ? <Image className="book-cover" src={this.props.image_url} size='small' centered/> : <Image className="book-cover" src={this.state.bookCover} size='small' centered/>}
+                {this.props.isbn === null ? <Image className="book-cover" src={this.props.image_url} size='small' centered/> : <Image className="book-cover" src={this.state.bookCover} width='128' height='200' size='small' centered/>}
+                
+                {/* testing logic for ranking system */}
+                {this.props.isbn === null ? null : 
+                <div>
+                
+                    <Button circular
+                        // type="submit"
+                        size="medium"
+                        icon color='white'
+                        id="book-rankings"
+                        >
+                        {/* {this.props.savedBookCover.map((book) => 
+                            this.setState({
+                                counter: this.state.counter + 1,
+                            })
+                        )} */}
+                        {this.props.count}
+                    </Button>
+                </div>}
+                
                 <Button circular
                     // type="submit"
                     size="small"
@@ -79,7 +98,7 @@ import '../assets/Book.css'
     }
 }
 function mapStateToProps(state) {
-    console.log('look here to see if status for bookcover worked!!!!', state)
+    // console.log('look here to see if status for bookcover worked!!!!', state)
     return {
         savedBookCover: state.savedBookCover,
     }

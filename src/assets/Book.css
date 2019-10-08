@@ -28,3 +28,12 @@
     margin-top: 190px;
     padding: 15px;
 }
+
+#book-rankings {
+   position: absolute;
+   margin-left: -200px;
+   margin-top: -25px;
+   padding: 15px;
+   width: 45px;
+   z-index: 0;
+}

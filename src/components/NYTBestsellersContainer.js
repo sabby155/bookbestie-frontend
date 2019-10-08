@@ -2,12 +2,12 @@ import React from 'react'
 import Book from './Book'
 import BookDetail from './BookDetail'
 import { connect } from 'react-redux'
-
+import '../assets/NYTBestsellersContainer.css'
 class NYTBestsellersContainer extends React.Component {
 
     state = {
         bookDetailObj: {},
-        bookCover: ""
+        bookCover: "",
     }
 
     // book and bookDetail are siblings - difficulty passing props btn them so muct go back up through container 
@@ -19,11 +19,15 @@ class NYTBestsellersContainer extends React.Component {
     }
 
     renderBooks = (props) => {
-        console.log(this.props)
+        // console.log(this.props)
+        // incrementing a counter & adding as prop in order to display ranking for NYT Bestsellers list in Book objects
         if (this.props.bestSellerCards) {
+             let count = 0;
             return this.props.bestSellerCards.map(card => {
+                count++;
                 return (<Book 
                     key={card.id} {...card} 
+                    count={count}
                     handleClick={this.renderBookDetail} 
                 />)
             })
@@ -31,8 +35,9 @@ class NYTBestsellersContainer extends React.Component {
     }
 
     render() {
+       
         return (
-            <div>
+            <div className="nyt-bestsellers-container">
                 <h2>Bestseller's List</h2>
                 <h3>Explore this month’s NYTimes Best seller’s list for Combined Print and E-Book Fiction.</h3>
 

@@ -1,6 +1,7 @@
 #book-details-pic {
     float:left;
     /* padding: 25px; */
+    margin-top: 10px;;
     display:flex;
     height: 200px;
     width: 150px;
@@ -19,6 +20,11 @@ div.ui.fluid.container {
 /* #card-content {
     max-width: 95%
 } */
+
+#card-content {
+    /* padding: 20px; */
+    margin-left: 180px;
+}
 
 
 

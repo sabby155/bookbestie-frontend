@@ -1,0 +1,14 @@
+#search-container {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+#search-bar {
+    display: inline-block;
+    justify-content: center;
+    padding: 100px;
+    height: 300px;
+    width: 700px;
+    border: 1px solid teal;
+}

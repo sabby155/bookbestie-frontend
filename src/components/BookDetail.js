@@ -118,13 +118,14 @@ import '../assets/BookDetail.css'
     // can use the user ID for a post 
 
     render() {
-        console.log('hello from book detail!!!!:', this.props)
+        // console.log('hello from book detail!!!!:', this.props)
         // console.log('this.state.value', this.state.value)
         // console.log('this.state.status:', this.state.statuses)
        return (
-
+           
         <Container fluid>
-        <div id="book-detail-container">
+        {this.props.description === null ? 
+        <div id="book-detail-container">  
         <Image 
             id="book-details-pic"
             src={this.props.image_url || this.props.bookCover} 
@@ -136,7 +137,7 @@ import '../assets/BookDetail.css'
         <span className="author-text">By {this.props.authors || this.props.bookDetailObj.authors}</span>
         <span className="published-text">Published {this.props.published_date || this.props.bookDetailObj.published_date}</span>
         {/* <span>Page Count: {this.props.page_count}</span> */}
-        <p className="description-text">{this.props.description || this.props.bookDetailObj.description}</p>
+       <p className="description-text">Sorry, no description to display here. . .</p>
 
         <form onSubmit={this.handleSubmit}>
             <select value={this.state.value} onChange={this.handleChange}>
@@ -148,8 +149,38 @@ import '../assets/BookDetail.css'
         </form>
         </div>
         </div>
+        
+        
+        :
+
+
+        <div id="book-detail-container">  
+        <Image 
+            id="book-details-pic"
+            src={this.props.image_url || this.props.bookCover} 
+            wrapped ui={true}
+        /> 
+        
+        <div id="card-content">
+        <strong>{this.props.title || this.props.bookDetailObj.title}</strong><br></br>
+        <span className="author-text">By {this.props.authors || this.props.bookDetailObj.authors}</span>
+        <span className="published-text">Published {this.props.published_date || this.props.bookDetailObj.published_date}</span>
+        {/* <span>Page Count: {this.props.page_count}</span> */}
+       <p className="description-text">{this.props.description || this.props.bookDetailObj.description}</p>
+
+        <form onSubmit={this.handleSubmit}>
+            <select value={this.state.value} onChange={this.handleChange}>
+                <option value="Wishlist">Want to read</option>
+                <option value="Read">Already read</option>
+                <option value="Favorite">A favorite</option>
+            </select>
+            <input type="submit" value="Submit"/>
+        </form>
+        </div>
+        </div>
+        }
         </Container>
-    
+           
        ) 
     }
 }
