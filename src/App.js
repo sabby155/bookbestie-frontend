@@ -41,7 +41,7 @@ class App extends React.Component {
         // console.log(data)
         // Below, I am first saving books to all cards then dividing into seperate section
         this.props.saveBestSellerCards(data)
-        this.props.divideBestSellerCards()
+        this.props.divideBestSellerCards(data)
       })
       .catch(error => {
         console.log(error);

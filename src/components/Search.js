@@ -30,7 +30,7 @@ class Search extends React.Component {
                         name="search" 
                         value={this.props.search}
                         onChange={this.props.handleSearchChange}/>
-                    {/* <Button type="submit">SEARCH</Button> */}
+                    {/* <input type="submit"/> */}
                     <Button circular
                             type="submit"
                             size="small"

@@ -20,14 +20,10 @@ class NYTBestsellersContainer extends React.Component {
 
     renderBooks = (props) => {
         // console.log(this.props)
-        // incrementing a counter & adding as prop in order to display ranking for NYT Bestsellers list in Book objects
         if (this.props.bestSellerCards) {
-             let count = 0;
             return this.props.bestSellerCards.map(card => {
-                count++;
                 return (<Book 
                     key={card.id} {...card} 
-                    count={count}
                     handleClick={this.renderBookDetail} 
                 />)
             })
@@ -45,7 +41,7 @@ class NYTBestsellersContainer extends React.Component {
                     {this.renderBooks()}
                     
                     {Object.keys(this.state.bookDetailObj).length < 1 ?  null : 
-                    <BookDetail {...this.state}  setUserStatus={this.props.setUserStatus} userObj={this.props.userObj} /> }
+                    <BookDetail {...this.state.bookDetailObj} bookCover={this.state.bookCover}  setUserStatus={this.props.setUserStatus} userObj={this.props.userObj} /> }
                     
                 </div>
 

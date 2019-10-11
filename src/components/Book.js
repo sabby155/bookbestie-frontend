@@ -25,28 +25,18 @@ import '../assets/Book.css'
                     this.setState({
                         bookCover: imageThumbnail,
                     })  
-                this.props.saveBookCover(this.state.bookCover, data.id)
+                // this might be unneccesary, keep for now  => this.props.saveBookCover(this.state.bookCover, data.id)
             })
             .catch(error => {
-                console.log(error.message)
+                console.log('this error hapened in componentdidmount here!',error.message)
             })
         }
     }
 
     render() {
-        // console.log('wcewfewf',this.state)
+        console.log('wcewfewf loook at th eprops here:',this.props)
        return (
         <div>
-            {/* card component */}
-            {/* <Card color="teal" onClick={(event) => this.props.handleClick(this.props)}>
-                <Image src={this.props.image_url} size='small' centered/>
-                <Card.Content>
-                <Card.Header>{this.props.title}</Card.Header>
-                <Card.Meta>
-                    <span>{this.props.authors}</span>
-                </Card.Meta>
-                </Card.Content>
-            </Card> */}
 
 
             <div className="book-card" onClick={(event) => {
@@ -58,20 +48,12 @@ import '../assets/Book.css'
                 {/* testing logic for ranking system */}
                 {this.props.isbn === null ? null : 
                 <div>
-                
                     <Button circular 
-                        // type="submit"
                         size="medium"
                         color="white"
-
                         id="book-rankings"
                         >
-                        {/* {this.props.savedBookCover.map((book) => 
-                            this.setState({
-                                counter: this.state.counter + 1,
-                            })
-                        )} */}
-                        <span id="ranks">{this.props.count}</span>
+                        <span id="ranks">{this.props.rating}</span>
                     </Button>
                 </div>}
                 
